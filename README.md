@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # qa_python_5 - Тестирование Stellar Burgers
 
 Автоматизированные тесты для сайта [Стеллар Бургерс](https://stellarburgers.education-services.ru/).
@@ -44,4 +45,3 @@ pytest -v tests/
 
 ## Результат
 12 passed in 65.78s
-
