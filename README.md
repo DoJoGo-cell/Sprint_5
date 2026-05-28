@@ -37,11 +37,11 @@
 - `test_construction_transition_to_toppings_section` — проверка перехода в секцию Начинки в разделе конструктор на главной странице
 
 ## Зависимости
-selenium
-pytest
+- selenium
+- pytest
 
 ## Запуск тестов
 pytest -v tests/
 
 ## Результат
-12 passed in 65.78s
+12 passed in 62.35s

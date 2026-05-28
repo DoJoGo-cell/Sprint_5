@@ -3,91 +3,89 @@ from selenium.webdriver.common.by import By
 class RegistrationPage:
 
     #Форма регистрации:
-    REGISTRATION_FORM = (By.TAG_NAME, 'form')
+    REGISTRATION_FORM = (By.CSS_SELECTOR, 'form')
 
     #Заголовок формы:
-    REGISTRATION_HEADER = (By.XPATH, '//main/div/h2')
+    REGISTRATION_HEADER = (By.XPATH, '//h2[text()="Регистрация"]')
 
     #Поле Имя:
-    INPUT_NAME = (By.XPATH, '//form/fieldset[1]//input')
+    INPUT_NAME = (By.XPATH, '//label[text()="Имя"]/following-sibling::input')
     #Поле Email:
-    INPUT_EMAIL = (By.XPATH, '//form/fieldset[2]//input')
+    INPUT_EMAIL = (By.XPATH, '//label[text()="Email"]/following-sibling::input')
     #Поле Пароль:
-    INPUT_PASSWORD = (By.XPATH, '//form/fieldset[3]//input')
+    INPUT_PASSWORD = (By.XPATH, '//label[text()="Пароль"]/following-sibling::input')
 
     #Кнопка регистрации:
-    REGISTRATION_BUTTON = (By.XPATH, '//form[@class="Auth_form__3qKeq mb-20"]//button[text()="Зарегистрироваться"]')
+    REGISTRATION_BUTTON = (By.XPATH, '//button[text()="Зарегистрироваться"]')
 
     #Кнопка авторизации:
-    AUTHORIZATION_BUTTON = (By.XPATH, '//div/p/a[text()="Войти"]')
+    AUTHORIZATION_BUTTON = (By.XPATH, '//a[text()="Войти"]')
 
     #Ошибка валидации пароля, текст:
-    ERROR_TEXT = (By.XPATH, '//form/fieldset[3]//p')
+    ERROR_TEXT = (By.XPATH, '//p[text()="Некорректный пароль"]')
 
 class AuthorizationPage:
 
     #Кнопка авторизации на главном экране:
-    AUTHORIZATION_BUTTON_MAIN = (By.XPATH, '//section[2]/div/button')
+    AUTHORIZATION_BUTTON_MAIN = (By.XPATH, '//button[text()="Войти в аккаунт"]')
 
     #Форма авторизации:
-    AUTHORIZATION_FORM = (By.TAG_NAME, 'form')
+    AUTHORIZATION_FORM = (By.CSS_SELECTOR, 'form')
 
     #Поле Email:
-    INPUT_EMAIL = (By.XPATH, '//form/fieldset[1]//input')
+    INPUT_EMAIL = (By.XPATH, '//label[text()="Email"]/following-sibling::input')
 
     #Поле Пароль:
-    INPUT_PASSWORD = (By.XPATH, '//form/fieldset[2]//input')
+    INPUT_PASSWORD = (By.XPATH, '//label[text()="Пароль"]/following-sibling::input')
 
     #Кнопка авторизации:
-    AUTHORIZATION_BUTTON = (By.XPATH, '//form[@class="Auth_form__3qKeq mb-20"]//button[text()="Войти"]')
+    AUTHORIZATION_BUTTON = (By.XPATH, '//button[text()="Войти"]')
 
-    RECOVERY_BUTTON = (By.XPATH, '//div/p[2]/a[text()="Восстановить пароль"]')
+    RECOVERY_BUTTON = (By.XPATH, '//a[text()="Восстановить пароль"]')
 
 class MainPage:
 
     #Кнопка оформления заказа
-    BUTTON_ORDER = (By.XPATH, '//div[@class="BurgerConstructor_basket__container__2fUl3 mt-10"]//button[text()="Оформить заказ"]')
+    BUTTON_ORDER = (By.XPATH, '//button[text()="Оформить заказ"]')
 
     #Кнопка перехода в личный кабинет
-    BUTTON_ACCOUNT = (By.XPATH, '//header/nav/a/p[@class="AppHeader_header__linkText__3q_va ml-2"]')
+    BUTTON_ACCOUNT = (By.XPATH, '//p[text()="Личный Кабинет"]')
 
 class RecoveryPasswordPage:
 
     #Форма восстановления пароля:
-    RECOVERY_FORM = (By.TAG_NAME, 'form')
+    RECOVERY_FORM = (By.CSS_SELECTOR, 'form')
 
     #Кнопка перехода на страницу авторизации:
-    BUTTON_TRANSITION = (By.XPATH, '//div/p/a[@class="Auth_link__1fOlj" and text()="Войти"]')
+    BUTTON_TRANSITION = (By.XPATH, '//p[text()="Вспомнили пароль?"]/a[text()="Войти"]')
 
 class PersonalAccountPage:
 
     #Раздел профиль активный:
-    PROFILE_SECTION_ACTIVE = (By.XPATH, '//a[contains(@href, "/account/order-history")]')
+    PROFILE_SECTION_ACTIVE = (By.XPATH, '//a[@aria-current="page" and text()="Профиль"]')
 
     #Кнопка перехода в конструктор:
-    BUTTON_CONSTRUCTION_INACTIVE = (By.XPATH, '//a[@class="AppHeader_header__link__3D_hX"]')
+    BUTTON_CONSTRUCTION_INACTIVE = (By.XPATH, '//p[text()="Конструктор"]')
 
     #Кнопка выхода из аккаунта:
-    BUTTON_LOG_OUT = (By.XPATH, '//button[@class="Account_button__14Yp3 text text_type_main-medium text_color_inactive"]')
+    BUTTON_LOG_OUT = (By.XPATH, '//button[text()="Выход"]')
 
 class Construction:
 
-    #Раздел Булки неактивен:
-    BUNS_SECTION_INACTIVE = (By.XPATH, '//div[@class="tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect"]/span[text()="Булки"]')
+    #Раздел Булки выбран:
+    BUNS_SECTION_SELECTED = (By.XPATH, '//div[contains(@class, "current")]//span[text()="Булки"]')
 
-    #Раздел Булки активен:
-    BUNS_SECTION_ACTIVE = (By.XPATH, '//div[@class="tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect"]/span[text()="Булки"]')
+    #Раздел Соусы:
+    SAUCES_SECTION = (By.XPATH, '//span[text()="Соусы"]')
 
-    #Раздел Соусы неактивен:
-    SAUCES_SECTION_INACTIVE = (By.XPATH, '//div[@class="tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect"]/span[text()="Соусы"]')
+    #Раздел Соусы выбран:
+    SAUCES_SECTION_SELECTED = (By.XPATH, '//div[contains(@class, "current")]//span[text()="Соусы"]')
 
-    #Раздел Соусы активен:
-    SAUCES_SECTION_ACTIVE = (By.XPATH, '//div[@class="tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect"]/span[text()="Соусы"]')
+    #Раздел Начинки:
+    TOPPINGS_SECTION = (By.XPATH, '//span[text()="Начинки"]')
 
-    #Раздел Начинки неактивен:
-    TOPPINGS_SECTION_INACTIVE = (By.XPATH, '//div[@class="tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect"]/span[text()="Начинки"]')
+    #Раздел Начинки выбран:
+    TOPPINGS_SECTION_SELECTED = (By.XPATH, '//div[contains(@class, "current")]//span[text()="Начинки"]')
 
-    #Раздел Начинки активен:
-    TOPPINGS_SECTION_ACTIVE = (By.XPATH, '//div[@class="tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect"]/span[text()="Начинки"]')
 
 
