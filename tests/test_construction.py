@@ -3,7 +3,7 @@ from locators import Construction
 
 class TestTransition:
 
-    def test_construction_transition_to_buns_section(self, driver_main_page: webdriver.Chrome):
+    def test_construction_buns_section_active_default(self, driver_main_page: webdriver.Chrome):
         driver = driver_main_page
 
         assert driver.find_element(*Construction.BUNS_SECTION_SELECTED)

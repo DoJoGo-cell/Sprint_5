@@ -22,7 +22,8 @@ class RegistrationPage:
     AUTHORIZATION_BUTTON = (By.XPATH, '//a[text()="Войти"]')
 
     #Ошибка валидации пароля, текст:
-    ERROR_TEXT = (By.XPATH, '//p[text()="Некорректный пароль"]')
+    ERROR_TEXT_PASSWORS = (By.XPATH, '//p[text()="Некорректный пароль"]')
+
 
 class AuthorizationPage:
 

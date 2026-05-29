@@ -1,25 +1,9 @@
 import pytest
-import random
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-from locators import AuthorizationPage, RegistrationPage, MainPage, RecoveryPasswordPage
+from locators import AuthorizationPage, RegistrationPage, RecoveryPasswordPage
 from urls import URLs
-
-@pytest.fixture
-def generator_of_valid_password():
-    password = f'{random.randint(100000, 999995)}'
-    return password
-
-@pytest.fixture
-def generator_of_invalid_password():
-    password = f'{random.randint(100, 995)}'
-    return password
-
-@pytest.fixture
-def generator_of_login():
-    login = f'andrewmaksimov46{random.randint(100, 995)}@yandex.ru'
-    return login
 
 @pytest.fixture
 def driver_main_page():
